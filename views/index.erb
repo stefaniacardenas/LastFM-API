@@ -1,0 +1,29 @@
+<html>
+<head>
+	<title>Past Events</title>
+	<link href="/stylesheets/application.css" rel="stylesheet" type="text/css">
+	<body>
+		Some of the gigs where I have been from 2010 till 2013
+		<script src='http://code.jquery.com/jquery-2.1.1.min.js'> </script>
+		<script src='http://cdnjs.cloudflare.com/ajax/libs/mustache.js/0.7.2/mustache.js'> </script>
+		<script>
+		var x = {}
+		$(document).ready(function() {
+			$.get("http://ws.audioscrobbler.com/2.0/?method=user.getpastevents&user=jenniferjentle&api_key=5ef596e616036fc7df278edf31cce703&format=json", function(getAllResponseHeaders) {
+				var eventsVar = (getAllResponseHeaders["events"]["event"]);
+				var artists = Mustache.render($('#lastfm').html(), {events: eventsVar});
+				$('#results').append(artists);
+			 })
+		})
+		</script>
+
+		<template id="lastfm">
+			{{#events}}
+			<li> {{title}}</li>
+			{{/events}}
+		</template>
+
+		<ul id="results"></ul>
+</body>
+</head>
+</html>
