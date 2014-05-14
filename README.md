@@ -3,6 +3,8 @@
 
 This is a mid-week excercise to get my head around APIs, jQuery, Mustache.js, etc
 I have used user.getEvents API from http://www.lastfm.it/api
+
+Technologies used
 -----------
 For the completion of this project I used the following technologies:
 
