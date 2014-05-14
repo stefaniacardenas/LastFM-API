@@ -10,6 +10,7 @@ For the completion of this project I used the following technologies:
 
 * jQuery
 * Mustache.js
+* Ajax
 * HTML5
 * CSS3
 * Ruby
