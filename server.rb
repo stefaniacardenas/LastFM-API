@@ -6,4 +6,8 @@ class MyLastFM < Sinatra::Base
 		erb :index
 	end
 
+  get '/lastfm' do
+    erb :lastfm
+  end
+
 end

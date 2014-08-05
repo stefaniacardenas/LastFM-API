@@ -1,0 +1,50 @@
+<html>
+<head>
+	<title>Past Events</title>
+	<link href="/stylesheets/application.css" rel="stylesheet" type="text/css">
+	<body>
+		<script src='http://code.jquery.com/jquery-2.1.1.min.js'> </script>
+		<script src='http://cdnjs.cloudflare.com/ajax/libs/mustache.js/0.7.2/mustache.js'> </script>
+		<script>
+			var x = {}
+			$(document).ready(function() {
+				$.get("http://ws.audioscrobbler.com/2.0/?method=user.getpastevents&user=jenniferjentle&api_key=5ef596e616036fc7df278edf31cce703&format=json", function(getAllResponseHeaders) { // 
+					var eventsVar = (getAllResponseHeaders["events"]["event"]);
+					var artists = Mustache.render($('#lastfm').html(), {events: eventsVar});
+					$('#results').append(artists);
+				 })
+			
+				$.get("http://ws.audioscrobbler.com/2.0/?method=user.getinfo&user=jenniferjentle&api_key=5ef596e616036fc7df278edf31cce703&format=json", function(response) {
+					var profiles = (response["user"]);
+					var largeImage = $.grep(profiles.image, function(image){
+						return image.size === "extralarge";
+					})[0]
+					largeImage["text"] = largeImage["#text"]
+					console.log({user: profiles, pic: largeImage})
+					var persons = Mustache.render($('#lastfmProfile').html(), {user: profiles, pic: largeImage});
+					$('#results').prepend(persons)
+				})
+			})
+
+		</script>
+
+		<template id="lastfmProfile">
+			{{#user}}
+			<h2> My username on Last.fm is {{name}}. Follow me! </h2>
+			{{/user}}
+
+			{{#pic}} <img src="{{text}}"> {{/pic}} 
+
+		</template>
+
+		<template id="lastfm">
+			<h3>Here is an incomplete list of gigs where I have been from 2010 till 2013. I got it through my Last.fm account using user.getEvents <a href="http://www.lastfm.it/api">API</a>.</h3>
+			{{#events}}
+			<li> {{title}}</li>
+			{{/events}}
+		</template>
+
+		<ul id="results"></ul>
+</body>
+</head>
+</html>

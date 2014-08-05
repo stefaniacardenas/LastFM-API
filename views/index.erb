@@ -1,49 +1,39 @@
-<html>
-<head>
-	<title>Past Events</title>
-	<link href="/stylesheets/application.css" rel="stylesheet" type="text/css">
-	<body>
-		Some of the gigs where I have been from 2010 till 2013
-		<script src='http://code.jquery.com/jquery-2.1.1.min.js'> </script>
-		<script src='http://cdnjs.cloudflare.com/ajax/libs/mustache.js/0.7.2/mustache.js'> </script>
-		<script>
-			var x = {}
-			$(document).ready(function() {
-				$.get("http://ws.audioscrobbler.com/2.0/?method=user.getpastevents&user=jenniferjentle&api_key=5ef596e616036fc7df278edf31cce703&format=json", function(getAllResponseHeaders) {
-					var eventsVar = (getAllResponseHeaders["events"]["event"]);
-					var artists = Mustache.render($('#lastfm').html(), {events: eventsVar});
-					$('#results').append(artists);
-				 })
-			
-				$.get("http://ws.audioscrobbler.com/2.0/?method=user.getinfo&user=jenniferjentle&api_key=5ef596e616036fc7df278edf31cce703&format=json", function(response) {
-					var profiles = (response["user"]);
-					var largeImage = $.grep(profiles.image, function(image){
-						return image.size === "extralarge";
-					})[0]
-					largeImage["text"] = largeImage["#text"]
-					console.log({user: profiles, pic: largeImage})
-					var persons = Mustache.render($('#lastfmProfile').html(), {user: profiles, pic: largeImage});
-					$('#results').prepend(persons)
-				})
-			})
+<body>
 
-		</script>
+  <div class="site-wrapper">
 
-		<template id="lastfmProfile">
-			{{#user}}
-			<h2> {{name}}
-			{{/user}}
+    <div class="site-wrapper-inner">
 
-			{{#pic}} <img src="{{text}}"> {{/pic}} </h2>
-		</template> 
+      <div class="cover-container">
 
-		<template id="lastfm">
-			{{#events}}
-			<li> {{title}}</li>
-			{{/events}}
-		</template>
+        <div class="masthead clearfix">
+          <div class="inner">
+            <h3 class="masthead-brand">Cover</h3>
+            <ul class="nav masthead-nav">
+              <li class="active"><a href="/lastfm">Last.fm API</a></li>
+              <li><a href="https://github.com/stefaniacardenas/cv">About me</a></li>
+              <li><a href="https://github.com/stefaniacardenas">My Github</a></li>
+            </ul>
+          </div>
+        </div>
 
-		<ul id="results"></ul>
+        <div class="inner cover">
+          <h1 class="cover-heading">My APIs practice page</h1>
+          <p class="lead">This is a page that allows you to see the result of my practice with APIs. I hope you enjoy it! </p>
+          <p class="lead">
+            <a href="https://github.com/stefaniacardenas/LastFM-API" class="btn btn-lg btn-default">Learn more</a>
+          </p>
+        </div>
+
+        <div class="mastfoot">
+          <div class="inner">
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
 </body>
-</head>
-</html>
