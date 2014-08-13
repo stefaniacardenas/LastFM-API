@@ -1,9 +1,9 @@
 #Last.fm APIs
 ==================
 
-This is a mid-week excercise to get my head around APIs, jQuery, Mustache.js, etc
+This is a mid-week excercise to get my head around APIs, jQuery, Mustache.js and CSS.
 I have used [user.getEvents API] (http://www.lastfm.it/api).
-You can see the result of this exercise [here] (http://my-apis.herokuapp.com)
+You can see the result of this exercise [here] (http://my-apis.herokuapp.com).
 
 Technologies used
 -----------
