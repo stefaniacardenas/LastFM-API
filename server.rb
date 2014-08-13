@@ -10,4 +10,5 @@ class MyLastFM < Sinatra::Base
     erb :lastfm
   end
 
+
 end

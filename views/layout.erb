@@ -1,30 +1,25 @@
-<!DOCTYPE html>
 <html>
   <head>
-
-    <title>Last.fm API</title>
-
+    <title>My APIs</title>
+     <link href="css/application.css" rel="stylesheet" type="text/css" />
   </head>
 
-    <!-- Latest compiled and minified CSS -->
-		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+<body>
+  <div class="navbar-container">
+    <div class="navbar-list">
+      <ul class="navbar-ul">
+        <li><a href="/">My APIs</a></li>
+        <li><a href="/lastfm">Last.fm API</a></li>
+        <li><a href="https://github.com/stefaniacardenas/cv">About me</a></li>
+        <li><a href="https://github.com/stefaniacardenas">My Github</a></li>
+        </ul>
+      </ul>
+    </div>
+  </div>
 
-		<!-- Optional theme -->
-		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+  <%= yield %>
 
-		<!-- Latest compiled and minified JavaScript -->
-		<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-
-  </head>
-  <body>
-    <%= yield %>
-
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-    <script src="/js/bootstrap.min.js"></script>
-    <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
-<script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
- 	</body>
+  <script src='http://code.jquery.com/jquery-2.1.1.min.js'> </script>
+  <script src='http://cdnjs.cloudflare.com/ajax/libs/mustache.js/0.7.2/mustache.js'> </script>
+</body>
 </html>
