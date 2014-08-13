@@ -30,7 +30,39 @@ body {
 }
 
 .index-body {
-	margin-left: 50px;
-	margin-top: 60px;
+	margin-left: 30px;
+	margin-top: 35px;
+	font-family: Helvetica;
+	color: white;
+}
+
+#index-container { 
+  width: 780px; 
+  margin: 0 auto; 
+  margin-top: 50px;
+  border: 1px solid #000000;
+  text-align: left;
+  background-color: black;
+  opacity: 0.8;
+  border-radius: 20px; 
+	-moz-border-radius: 20px; 
+	-webkit-border-radius: 20px;	
+}
+.lm-form {
+	text-align: right;
+}
+
+.lm-button {
+	text-align: center;
+	margin-right: 30px;
+	margin-top: 25px;
+	-webkit-border-radius: 10px;
+	width: 100px;
+	height: 40px;
+	font-family: Helvetica;
+	font-size: 15px;
+}
+
+#body-lastfm {
 	font-family: Helvetica;
 }
