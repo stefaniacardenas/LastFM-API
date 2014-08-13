@@ -2,7 +2,8 @@
 ==================
 
 This is a mid-week excercise to get my head around APIs, jQuery, Mustache.js, etc
-I have used user.getEvents API from http://www.lastfm.it/api
+I have used [user.getEvents API] (http://www.lastfm.it/api).
+You can see the result of this exercise [here] (http://my-apis.herokuapp.com)
 
 Technologies used
 -----------
@@ -16,6 +17,7 @@ For the completion of this project I used the following technologies:
 * Ruby
 * Sinatra
 * Shotgun
+* Heroku
 
 About Makers Academy
 -----------
